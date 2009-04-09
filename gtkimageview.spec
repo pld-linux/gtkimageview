@@ -1,16 +1,18 @@
 Summary:	A GTK+ widget providing zoomable and panable view of a GdkPixbuf
 Name:		gtkimageview
-Version:	1.6.3
+Version:	1.6.4
 Release:	1
 License:	LGPL v2.1
 Group:		X11/Libraries
 #Source0:	http://trac.bjourne.webfactional.com/attachment/wiki/WikiStart/%{name}-%{version}.tar.gz?format=raw
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	9c241ecf36faeb750d42c5cbc1301bcf
+# Source0-md5:	501367b3f50e69a12208dc9c6ad00b18
 URL:		http://trac.bjourne.webfactional.com/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 1:2.6.0
+BuildRequires:	gnome-common
+BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,29 +51,26 @@ GtkImageView API documentation.
 %description apidocs -l pl.UTF-8
 Dokumentacja API GtkImageView.
 
-
 %prep
 %setup -q
 
 %build
+%{__gtkdocize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
-	 \
+	--enable-gtk-doc \
+	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_docdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv $RPM_BUILD_ROOT%{_datadir}{,/doc}/gtk-doc
-rm $RPM_BUILD_ROOT%{_libdir}/lib*.so.?
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -82,19 +81,20 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libgtkimageview.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgtkimageview.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_pkgconfigdir}/*.pc
+%attr(755,root,root) %{_libdir}/libgtkimageview.so
+%{_libdir}/libgtkimageview.la
+%{_pkgconfigdir}/gtkimageview.pc
 %{_includedir}/%{name}
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgtkimageview.a
 
 %files apidocs
 %defattr(644,root,root,755)
-%{_gtkdocdir}/*
+%{_gtkdocdir}/gtkimageview
