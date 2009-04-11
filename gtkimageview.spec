@@ -1,4 +1,5 @@
 Summary:	A GTK+ widget providing zoomable and panable view of a GdkPixbuf
+Summary(pl.UTF-8):	Widget GTK+ z widokiem GdkPixBuf pozwalającym na powiększanie i przesuwanie
 Name:		gtkimageview
 Version:	1.6.4
 Release:	1
@@ -22,22 +23,35 @@ GtkImageView is a widget that provides a zoomable and panable view of
 a GdkPixbuf. It is intended to be usable in most types of image
 viewing applications.
 
+%description -l pl.UTF-8
+GtkImageView to widget udostępniający widok GdkPixBuf z możliwością
+powiększania i przesuwania. Powstał z myślą o używaniu w większości
+rodzajów aplikacji do przeglądania grafiki.
+
 %package devel
 Summary:	Header files for the GtkImageView widget
-Group:		Development/Libraries
+Summary(pl.UTF-8):	Pliki nagłówkowe widgetu GtkImageView
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.10.0
 
 %description devel
 Header files for the GtkImageView widget.
 
+%description devel -l pl.UTF-8
+Pliki nagłówkowe widgetu GtkImageView.
+
 %package static
 Summary:	Static library of the GtkImageView widget
-Group:		Development/Libraries
+Summary(pl.UTF-8):	Statyczna biblioteka widgetu GtkImageView
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static version libraries of the GtkImageView widget.
+Static version of the GtkImageView widget library.
+
+%description static -l pl.UTF-8
+Statyczna wersja biblioteki widgetu GtkImageView.
 
 %package apidocs
 Summary:	GTKImageView API documentation
