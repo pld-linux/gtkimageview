@@ -11,6 +11,7 @@ Source0:	%{name}-%{version}.tar.gz
 URL:		http://trac.bjourne.webfactional.com/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gnome-common
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.8
