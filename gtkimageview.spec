@@ -2,7 +2,7 @@ Summary:	A GTK+ widget providing zoomable and panable view of a GdkPixbuf
 Summary(pl.UTF-8):	Widget GTK+ z widokiem GdkPixBuf pozwalającym na powiększanie i przesuwanie
 Name:		gtkimageview
 Version:	1.6.4
-Release:	3
+Release:	4
 License:	LGPL v2.1
 Group:		X11/Libraries
 #Source0:	http://trac.bjourne.webfactional.com/attachment/wiki/WikiStart/%{name}-%{version}.tar.gz?format=raw
@@ -87,6 +87,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgtkimageview.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -102,7 +104,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgtkimageview.so
-%{_libdir}/libgtkimageview.la
 %{_pkgconfigdir}/gtkimageview.pc
 %{_includedir}/%{name}
 
