@@ -5,8 +5,7 @@ Version:	1.6.4
 Release:	4
 License:	LGPL v2.1
 Group:		X11/Libraries
-#Source0:	http://trac.bjourne.webfactional.com/attachment/wiki/WikiStart/%{name}-%{version}.tar.gz?format=raw
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://trac.bjourne.webfactional.com/chrome/common/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	501367b3f50e69a12208dc9c6ad00b18
 URL:		http://trac.bjourne.webfactional.com/
 BuildRequires:	autoconf >= 2.53
