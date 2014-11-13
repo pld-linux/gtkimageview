@@ -7,7 +7,7 @@ License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	http://trac.bjourne.webfactional.com/chrome/common/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	501367b3f50e69a12208dc9c6ad00b18
-URL:		http://trac.bjourne.webfactional.com/
+URL:		https://projects.gnome.org/gtkimageview/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
