@@ -2,11 +2,12 @@ Summary:	A GTK+ widget providing zoomable and panable view of a GdkPixbuf
 Summary(pl.UTF-8):	Widget GTK+ z widokiem GdkPixBuf pozwalającym na powiększanie i przesuwanie
 Name:		gtkimageview
 Version:	1.6.4
-Release:	4
+Release:	5
 License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	http://trac.bjourne.webfactional.com/chrome/common/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	501367b3f50e69a12208dc9c6ad00b18
+Patch0:		no-Werror.patch
 URL:		https://projects.gnome.org/gtkimageview/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -67,6 +68,7 @@ Dokumentacja API GtkImageView.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gtkdocize}
