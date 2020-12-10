@@ -5,10 +5,11 @@ Version:	1.6.4
 Release:	6
 License:	LGPL v2.1
 Group:		X11/Libraries
+# dead, sources now available at https://github.com/baedert/gtkimageview
 Source0:	http://trac.bjourne.webfactional.com/chrome/common/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	501367b3f50e69a12208dc9c6ad00b18
 Patch0:		no-Werror.patch
-URL:		https://projects.gnome.org/gtkimageview/
+URL:		https://wiki.gnome.org/Projects/GTK/GtkImageView
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
