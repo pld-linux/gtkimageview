@@ -60,9 +60,7 @@ Summary:	GTKImageView API documentation
 Summary(pl.UTF-8):	Dokumentacja API GtkImageView
 Group:		Documentation
 Requires:	gtk-doc-common
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 GtkImageView API documentation.
